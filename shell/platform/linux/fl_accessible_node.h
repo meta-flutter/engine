@@ -5,16 +5,13 @@
 #ifndef FLUTTER_SHELL_PLATFORM_LINUX_FL_ACCESSIBLE_NODE_H_
 #define FLUTTER_SHELL_PLATFORM_LINUX_FL_ACCESSIBLE_NODE_H_
 
-#include <gtk/gtk.h>
+#include <gio/gio>
+#include <atk/atk.h>
 
 #include "flutter/shell/platform/embedder/embedder.h"
 #include "flutter/shell/platform/linux/public/flutter_linux/fl_engine.h"
 
 G_BEGIN_DECLS
-
-// ATK doesn't have the g_autoptr macros, so add them manually.
-// https://gitlab.gnome.org/GNOME/atk/-/issues/10
-G_DEFINE_AUTOPTR_CLEANUP_FUNC(AtkObject, g_object_unref)
 
 G_DECLARE_FINAL_TYPE(FlAccessibleNode,
                      fl_accessible_node,
